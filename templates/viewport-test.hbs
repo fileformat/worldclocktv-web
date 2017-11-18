@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="{{{viewport}}}">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>WorldClockTV - FAQ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="container">
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$(window)</td>
+      <td><span id="jqww"></span>x<span id="jqwh"></span></td>
+    </tr>
+    <tr>
+      <td>document.body.client</td>
+      <td><span id="cww"></span>x<span id="cwh"></span></td>
+    </tr>
+    <tr>
+      <td>window.inner</td>
+      <td><span id="iww"></span>x<span id="iwh"></span></td>
+    </tr>
+    <tr>
+      <td>screen</td>
+      <td><span id="sw"></span>x<span id="sh"></span></td>
+    </tr>
+    <tr>
+      <td>viewport</td>
+      <td><span id="viewport"></span></td>
+    </tr>
+    <tr>
+      <td>devicePixelRatio</td>
+      <td><span id="dpr"></span></td>
+    </tr>
+  </tbody>
+</table>
+    <p>
+      <a class="btn btn-primary" href="/support/faq.html">Back to FAQ</a>
+    </p>
+<script>
+    $( document ).ready(function() {
+        $("#jqwh").text($(window).height());
+        $("#jqww").text($(window).width());
+        $("#cwh").text(document.body.clientHeight);
+        $("#cww").text(document.body.clientWidth);
+        $("#iwh").text(window.innerHeight);
+        $("#iww").text(window.innerWidth);
+        $("#sh").text(screen.height);
+        $("#sw").text(screen.width);
+        $("#dpr").text(window.devicePixelRatio);
+        $("#viewport").text($("meta[name=viewport]").attr("content"));
+    });
+</script>
+    </div><!-- /.container -->
+  </body>
+</html>

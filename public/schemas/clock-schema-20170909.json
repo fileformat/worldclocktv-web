@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "title": "Clock",
+    "description": "A clock configuration for WorldClockTV",
+    "type": "object"
+    "properties": {
+        "id": {
+          "description": "The unique identifier for a clock",
+          "type": "string"
+        },
+        "title": {
+          "description": "Description of this clock",
+          "type": "string"
+        },
+        "location": {
+          "description": "List of locations to display",
+          "type": "array"
+          "items": {
+            "type": "object",
+             "properties": {
+              "id": {
+                "description": "The unique identifier for this location (usually the slug of the name)",
+                "type": "string"
+              },
+              "name": {
+                "description": "Name of the location",
+                "type": "string"
+              },
+              "latitude": {
+                "description": "Latitude",
+                "type": "number"
+              },
+              "longitude": {
+                "description": "Longitude",
+                "type": "number"
+              },
+              "timezone": {
+                "description": "Time zone at the location (from Olson list)",
+                "type": "string"
+              }
+            },
+            "required": ["id", "name", "latitude", "longitude", "timezone"]
+          }
+          "minItems": 1,
+          "uniqueItems": true
+        }
+    },
+    "required": ["id", "title", "locations"]
+}

@@ -1,0 +1,7 @@
+{{> above}}
+
+{{#each clocks}}
+<p><a href="index.html?clock={{id}}" class="btn btn-outline-{{#isParam 'current' id}}success{{else}}primary{{/isParam}}">{{title}}{{#if beta}} (beta){{/if}}</a></p>
+{{/each}}
+
+{{> below}}

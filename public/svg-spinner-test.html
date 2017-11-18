@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>WorldClockTV</title>
+	
+<meta name="referrer" content="always">
+<meta name="viewport" content="width=device-width, initial-scale={{scale}}, shrink-to-fit=yes">
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0000ff;
+  }
+  .spinner {
+    position: fixed;
+    width: 10vw;
+    height: 10vw;
+    top: 50%;
+    left: 50%;
+    margin-top: -5vw;
+    margin-left: -5vw;
+  }
+</style>
+  </head>
+  <body>
+   <svg class="spinner" version="1.1" id="L3" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+  viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+<circle fill="none" stroke="#fff" stroke-width="2" cx="50" cy="50" r="43" style="opacity:0.75;"/>
+  <circle fill="#fff" stroke="#0000ff" stroke-width="3" cx="8" cy="54" r="6" >
+    <animateTransform
+      attributeName="transform"
+      dur="2s"
+      type="rotate"
+      from="0 50 48"
+      to="360 50 52"
+      repeatCount="indefinite" />
+    
+  </circle>
+</svg>
+ 
+  </body>
+</html>

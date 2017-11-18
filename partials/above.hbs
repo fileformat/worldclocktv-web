@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/favicon.ico">
+
+    <title>WorldClockTV - {{title}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="/index.html"><img src="/favicon.svg" style="height:32px;" /> WorldClockTV</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item{{#isUrl '/picker.html'}} active{{/isUrl}}">
+            <a class="nav-link" href="/picker.html">Clocks{{#isUrl '/picker.html'}}<span class="sr-only"> (current)</span>{{/isUrl}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link{{#isUrl '/support/faq.html'}} active{{/isUrl}}" href="/support/faq.html">FAQ{{#isUrl '/support/faq.html'}}<span class="sr-only"> (current)</span>{{/isUrl}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link{{#isUrl '/support/about.html'}} active{{/isUrl}}" href="/support/about.html">About{{#isUrl '/support/about.html'}}<span class="sr-only"> (current)</span>{{/isUrl}}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>{{title}}</h1>
+
+
+ 

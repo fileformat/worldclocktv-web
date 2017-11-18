@@ -1,0 +1,15 @@
+{
+  "$schema": "https://www.worldclock.tv/schemas/clock-schema-20170909.json",
+  "area": { "method": "bounds", "ne": { "latitude": -10, "longitude": 178}, "sw": { "latitude": -42, "longitude": 113}},
+  "id": "australia",
+  "locations": [
+    {"id": "adelaide", "name": "Adelaide", "latitude": -34.92866, "longitude": 138.59863, "timezone": "Australia/Adelaide"},
+    {"id": "auckland", "name": "Auckland", "latitude": -36.86667, "longitude": 174.76667, "timezone": "Pacific/Auckland"},
+    {"id": "brisbane", "name": "Brisbane", "latitude": -27.470125, "longitude": 153.021072, "timezone": "Australia/Brisbane"},
+    {"id": "darwin", "name": "Darwin", "latitude": -12.46113, "longitude": 130.84185, "timezone": "Australia/Darwin"},
+    {"id": "perth", "name": "Perth", "latitude": -31.953512, "longitude": 115.857048, "timezone": "Australia/Perth"},
+    {"id": "sydney", "name": "Sydney", "latitude": -33.865143, "longitude": 151.209900, "timezone": "Australia/Sydney"}
+  ],
+  "style": "noroads",
+  "title": "Australia/New Zealand"
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://www.worldclock.tv/schemas/clock-schema-20170909.json",
+  "area": { "method": "bounds", "ne": { "latitude": 60, "longitude": 175}, "sw": { "latitude": -41, "longitude": -125}},
+  "beta": true,
+  "id": "logo",
+  "locations": [
+        {"id": "utc", "name": "UTC", "latitude": 0, "longitude": 0, "timezone": "UTC" }
+  ],
+  "style": "plain",
+  "title": "Logo Background"
+}

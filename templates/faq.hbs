@@ -1,0 +1,85 @@
+{{> above}}
+<style>
+.question {
+margin-top: 24pt;
+margin-bottom: 8pt;
+}
+.answer {
+margin-left: 36pt;
+}
+</style>
+
+<div class="question">How can I display this on an actual TV, without hooking up a PC?</div>
+
+<div class="answer">Use an <a href="http://amzn.to/2yaiYui">Amazon FireTV Stick</a>!  There is a <a href="https://www.amazon.com/FileFormatNet-WorldClockTV/dp/B075J1S583">App</a> for the Amazon FireTV!<br/>
+  <a href="https://www.amazon.com/FileFormatNet-WorldClockTV/dp/B075J1S583"><img src="https://cdn.glitch.com/ad7e23ae-d485-46bb-a797-67989a6c2a45%2Famazon-underground-app-us-black.png?1505268203586"></a></div>
+
+<div class="question">Why isn't my clock displaying properly?</div>
+
+<div class="answer">Hmm... That's a tough one.  Can you send us the following information?<br/><br/>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IP&nbsp;address</td>
+      <td>{{ip}}</span></td>
+    </tr>
+    <tr>
+      <td>User&nbsp;Agent</td>
+      <td>{{user_agent}}</span></td>
+    </tr>
+    <tr>
+      <td>window</td>
+      <td><span id="ww"></span>x<span id="wh"></span></td>
+    </tr>
+    <tr>
+      <td>screen</td>
+      <td><span id="sw"></span>x<span id="sh"></span></td>
+    </tr>
+    <tr>
+      <td>viewport</td>
+      <td><span id="viewport"></span></td>
+    </tr>
+    <!--
+    <tr>
+      <td></td>
+      <td id="x"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td id="y"></td>
+    </tr>
+    -->
+  </tbody>
+</table>
+</div>
+
+<div class="question">How do you get the high-res (1920x1080) web pages on the FireTV?  My web pages think it is 960x520</div>
+<div class="answer">
+<p>This was tough to figure out, but is pretty easy if you can control the <code>viewport</code> meta tag in the HTML and are using 
+your own app (i.e. not the WASK thing) with a WebView you can tweak.</p>
+
+<p>First: in the app, <code>WebSettings.setUseWideViewport(true)</code>.</p>
+
+<p>Second: make sure the viewport has <code>initial-scale=0.5</code>.</p>
+
+<p>Here are some test pages with various viewport settings:</p>
+
+{{#each tests}}
+<p><a href="/tests/{{this}}.html" class="btn btn-outline-primary">{{this}}</a></p>
+{{/each}}
+<script>
+    $( document ).ready(function() {
+        $("#wh").text($(window).height());
+        $("#ww").text($(window).width());
+        $("#sh").text(screen.height);
+        $("#sw").text(screen.width);
+        $("#viewport").text($("meta[name=viewport]").attr("content"));
+    });
+</script>
+{{> below}}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://www.worldclock.tv/schemas/clock-schema-20170909.json",
+  "area": { "method": "bounds", "ne": { "latitude": 58, "longitude": 40}, "sw": { "latitude": 36, "longitude": -10}},
+  "id": "europe",
+  "locations": [
+    {"id": "athens", "name": "Athens", "latitude": 37.97945,  "longitude": 23.71622, "timezone": "Europe/Athens"},
+    {"id": "berlin", "name": "Berlin", "latitude": 52.52437, "longitude": 13.41053, "timezone": "Europe/Berlin"},
+    {"id": "dublin", "name": "Dublin", "latitude": 53.33306, "longitude": -6.24889, "timezone": "Europe/Dublin"},
+    {"id": "kiev", "name": "Kiev", "latitude": 50.45466, "longitude": 30.5238, "timezone": "Europe/Kiev"},
+    {"id": "lisbon", "name": "Lisbon", "latitude": 38.71667, "longitude": -9.13333, "timezone": "Europe/Lisbon"},
+    {"id": "moscow", "name": "Moscow", "latitude": 55.75222, "longitude": 37.61556, "timezone": "Europe/Moscow" },
+    {"id": "paris", "name": "Paris", "latitude": 48.85341, "longitude": 2.3488, "timezone": "Europe/Paris"},
+    {"id": "rome", "name": "Rome", "latitude": 41.89193, "longitude": 12.51133, "timezone": "Europe/Rome"}
+  ],
+  "style": "noroads",
+  "title": "Europe"
+}

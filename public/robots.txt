@@ -1,0 +1,8 @@
+#
+# robots.txt for worldclock.tv
+#
+# Robots allowed!
+#
+
+User-Agent: *
+Allow: /

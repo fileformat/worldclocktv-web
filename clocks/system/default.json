@@ -1,0 +1,18 @@
+{
+  "$schema": "https://www.worldclock.tv/schemas/clock-schema-20170909.json",
+  "xarea": { "method": "zoom", "zoom": 3, "center": { "latitude": 18.8,  "longitude": 20}},
+  "area": { "method": "bounds", "ne": { "latitude": 60, "longitude": 165}, "sw": { "latitude": -41, "longitude": -135}},
+  "id": "default",
+  "locations": [
+    {"id": "losangeles", "name": "Los Angeles", "latitude": 34.052234200000001, "longitude": -120.5, "timezone": "America/Los_Angeles"},
+    {"id": "moscow", "name": "Moscow", "latitude": 55.75222, "longitude": 37.61556, "timezone": "Europe/Moscow" },
+    {"id": "mumbai", "name": "Mumbai", "latitude": 19.07283, "longitude": 72.88261, "timezone": "Asia/Kolkata" },
+    {"id": "newyork", "name": "New York", "latitude": 40.714269100000003, "longitude": -74, "timezone": "America/New_York"},
+    {"id": "rome", "name": "Rome", "latitude": 41.89193, "longitude": 12.51133, "timezone": "Europe/Rome"},
+    {"id": "sydney", "name": "Sydney", "latitude": -33.865143, "longitude": 151.209900, "timezone": "Australia/Sydney"},
+    {"id": "riodejaneiro", "name": "Rio de Janeiro", "latitude": -22.90278, "longitude": -43.2075, "timezone": "America/Sao_Paulo" },
+    {"id": "tokyo", "name": "Tokyo", "latitude": 35.6895, "longitude": 139.69171, "timezone": "Asia/Tokyo" },
+    {"id": "utc", "name": "UTC", "latitude": 0, "longitude": 0, "timezone": "UTC" }
+  ],
+  "title": "Global Cities"
+}

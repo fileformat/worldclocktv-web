@@ -1,0 +1,32 @@
+{
+  "$schema": "https://www.worldclock.tv/schemas/clock-schema-20170909.json",
+  "area": { "method": "bounds", "ne": { "latitude": 60, "longitude": 175}, "sw": { "latitude": -41, "longitude": -125}},
+  "beta": true,
+  "id": "everywhere",
+  "locations": [    
+    {"id": "", "name": "", "latitude": 0, "longitude": 0, "timezone": ""},
+    {"id": "adelaide", "name": "Adelaide", "latitude": -34.92866, "longitude": 138.59863, "timezone": "Australia/Adelaide"},
+    {"id": "auckland", "name": "Auckland", "latitude": -36.86667, "longitude": 174.76667, "timezone": "Pacific/Auckland"},
+    {"id": "brisbane", "name": "Brisbane", "latitude": -27.470125, "longitude": 153.021072, "timezone": "Australia/Brisbane"},
+    {"id": "chicago", "name": "Chicago", "latitude": 41.850033000000003, "longitude": -87.650052299999999, "timezone": "America/Chicago"},
+    {"id": "darwin", "name": "Darwin", "latitude": -12.46113, "longitude": 130.84185, "timezone": "Australia/Darwin"},
+    {"id": "denver", "name": "Denver", "latitude": 39.739153600000002, "longitude": -104.9847034, "timezone": "America/Denver"},
+    {"id": "dublin", "name": "Dublin", "latitude": 53.33306, "longitude": -6.24889, "timezone": "Europe/Dublin"},
+    {"id": "kiev", "name": "Kiev", "latitude": 50.45466, "longitude": 30.5238, "timezone": "Europe/Kiev"},
+    {"id": "lisbon", "name": "Lisbon", "latitude": 38.71667, "longitude": -9.13333, "timezone": "Europe/Lisbon"},
+    {"id": "losangeles", "name": "Los Angeles", "latitude": 34.052234200000001, "longitude": -118.24368490000001, "timezone": "America/Los_Angeles"},
+    {"id": "moscow", "name": "Moscow", "latitude": 55.75222, "longitude": 37.61556, "timezone": "Europe/Moscow" },
+    {"id": "mumbai", "name": "Mumbai", "latitude": 19.07283, "longitude": 72.88261, "timezone": "Asia/Kolkata" },
+    {"id": "newyork", "name": "New York", "latitude": 40.714269100000003, "longitude": -74.005972900000003, "timezone": "America/New_York"},
+    {"id": "paris", "name": "Paris", "latitude": 48.85341, "longitude": 2.3488, "timezone": "Europe/Paris"},
+    {"id": "perth", "name": "Perth", "latitude": -31.953512, "longitude": 115.857048, "timezone": "Australia/Perth"},
+    {"id": "riodejaneiro", "name": "Rio de Janeiro", "latitude": -22.90278, "longitude": -43.2075, "timezone": "America/Sao_Paulo" },
+    {"id": "rome", "name": "Rome", "latitude": 41.89193, "longitude": 12.51133, "timezone": "Europe/Rome"},
+    {"id": "sydney", "name": "Sydney", "latitude": -33.865143, "longitude": 151.209900, "timezone": "Australia/Sydney"},
+    {"id": "tokyo", "name": "Tokyo", "latitude": 35.6895, "longitude": 139.69171, "timezone": "Asia/Tokyo" },
+    {"id": "utc", "name": "UTC", "latitude": 0, "longitude": 0, "timezone": "UTC" },
+    {"id": "vilnius", "name": "Vilnius", "latitude": 54.68916, "longitude": 25.2798, "timezone": "Europe/Vilnius"}
+ ],
+  "style": "plain",
+  "title": "Everywhere"
+}

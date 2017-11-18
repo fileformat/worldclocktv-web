@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>WorldClockTV</title>
+	
+<meta name="referrer" content="always">
+<meta name="viewport" content="width=device-width, initial-scale={{scale}}, shrink-to-fit=yes">
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background:url(https://cdn.glitch.com/ad7e23ae-d485-46bb-a797-67989a6c2a45%2Fspinner.gif?1505008080000) center center no-repeat #3498db
+  }
+  #map {
+    position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+  }
+  .loading {
+    margin: 0, auto;
+  }
+</style>
+	<link rel="shortcut icon" href="/favicon.ico">
+
+<!-- scripts -->
+<script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{gmaps_id}}&libraries=visualization" type="text/javascript"></script>
+<script src="js/daynightoverlay.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.js"></script>
+<script src="js/moment-timezone-with-data.min.js"></script>
+<script>
+
+ var time_of_day = [
+         "midnight",
+         "late night",
+         "early morning",
+         "early morning",
+         "early morning",
+         "early morning",
+         "morning",
+         "morning",
+         "morning",
+         "morning",
+         "late morning",
+         "late morning",
+         "noon",
+         "early afternoon",
+         "early afternoon",
+         "afternoon",
+         "afternoon",
+         "evening",
+         "evening",
+         "evening",
+         "evening",
+         "night",
+         "night",
+         "night",
+         "night"
+      ]; 
+      
+    var settings = {{{clock}}};
+    var style = {{{style}}};
+    var dayNightOverlay;
+    
+    function initMap(cb) {
+        console.log("INFO: initializing map");
+
+        $("body").append($("<div>").attr("class", "map_yes").attr("id", "map"));
+        //$("#map").append($("<button>").attr("class", "btn btn-secondary margin10").attr("id", "map_exit"));
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          backgroundColor: '#3498db',
+          center: { lat: 0, lng: 0 },
+          scrollwheel: true,
+          disableDefaultUI: true,
+          //draggable: false,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          styles: style,
+          zoom: 2
+        });
+
+        for (var loop = 0; loop < settings.locations.length; loop++) {
+            var location = settings.locations[loop];
+            var infowindow = new google.maps.InfoWindow({
+                content: '<div class="timewindow" id="time-' + location.id + '">Loading...<br/><br/></div>',
+                position: new google.maps.LatLng(location.latitude, location.longitude),
+                shadowStyle: 1,
+                zIndex: loop
+            });
+            infowindow.open(map);
+        }
+
+        // global so they can be called by native code
+        window.zoomIn = function() { 
+          map.setZoom(map.getZoom() + 1);
+        };
+ 
+        window.zoomOut = function() { 
+          map.setZoom(map.getZoom() - 1);
+        };
+ 
+        var onResize = function() {
+        console.log("INFO: resize");
+        if (settings.area) {
+          if (settings.area.method == "bounds") {
+            var bounds = new google.maps.LatLngBounds(new google.maps.LatLng(settings.area.sw.latitude, settings.area.sw.longitude), new google.maps.LatLng(settings.area.ne.latitude, settings.area.ne.longitude));
+            map.fitBounds(bounds);
+            if (dayNightOverlay) {
+              dayNightOverlay.setDate(new Date());
+            }
+          }
+          else if (settings.area.method == "zoom") {
+            map.setZoom(settings.area.zoom);
+            map.setCenter(new google.maps.LatLng(settings.area.center.latitude, settings.area.center.longitude));
+          }
+        }
+    };
+
+        onResize();
+        
+        google.maps.event.addListenerOnce(map, 'idle', function(){
+            console.log("DEBUG: map idle");
+            // HACK to hide the close button
+            $(".gm-style-iw + div img").css('display', 'none');
+            dayNightOverlay = new DayNightOverlay({
+                map: map,
+                fillColor: 'rgba(0,0,0,0.25)'
+            });
+            onMinute();
+            window.setTimeout(function() {
+              onMinute();
+              window.setInterval(onMinute, 60000);
+            }, (60 - new Date().getSeconds()) * 1000);
+        });
+
+        google.maps.event.addListener(map, 'click', function(e) { console.log("INFO: lat=" + e.latLng.lat() + " lng=" + e.latLng.lng()); });
+        //google.maps.event.addListener(map, 'mousemove', function() { $("#map_exit").show(); });
+        google.maps.event.addDomListener(window, 'resize', onResize);
+        google.maps.event.addDomListener(window, 'keydown', function(e) { console.log("DEBUG: keydown: " + e.keyCode); /* window.location.href = '/picker.html?clock=' + settings.id; */ });
+        google.maps.event.addDomListener(window, 'click', function(e) { 
+          console.log("DEBUG: click: ", e); 
+          if (e.shiftKey) {
+            // do nothing, map is printing
+          }
+          else {
+            window.location.href = '/picker.html?clock=' + settings.id; 
+          }
+        });
+    }
+
+    function initControls(cb) {
+        console.log("DEBUG: initControls");
+
+        if (context.total_location != "NONE") {
+            context.map.controls[google.maps.ControlPosition[context.total_location]].push($("<span>").attr("id", "total_count").attr("class", "total_count")[0]);
+        }
+        context.dayNightOverlay.fillColor_ = 'rgba(0,0,0,' + context.night_opacity + ')';
+        context.dayNightOverlay.setDate(new Date()); // force refresh
+
+        if (cb) {
+            cb(null);
+        }
+    }
+
+    function onMinute() {
+        console.log("DEBUG: onMinute");
+        dayNightOverlay.setDate(new Date("2017-09-17T12:00:00Z"));
+        var now = moment.now();
+        for (var loop = 0; loop < settings.locations.length; loop++) {
+            var location = settings.locations[loop];
+          var localTime = moment(moment.tz(location.timezone));
+          var content = $("#time-" + location.id).empty();
+          content.append($("<span>").text(location.name));
+          content.append($("<br/>"));
+          content.append($("<span>").text(localTime.format(settings.time_format || "LT")));
+          content.append($("<br/>"));
+          content.append($("<span>").text(localTime.format((settings.tod_format || "dddd [${time_of_day}]").replace("${time_of_day}", time_of_day[ localTime.hour() ]))));
+        }
+        
+        ga('send', {hitType: 'event', eventCategory: 'Clock', eventAction: 'tick', eventLabel: settings.id });
+    }
+    
+    
+    console.log("DEBUG: script compiled");
+    $( document ).ready(function() {
+        console.log("DEBUG: ready");
+        document.title = document.title + " - " + settings.title;
+        initMap();
+    });
+</script>
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '{{ga_id}}', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>

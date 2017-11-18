@@ -1,0 +1,28 @@
+{
+  "name": "world-clock-tv",
+  "version": "0.0.1",
+  "description": "Map with time for various locations, formatted for big-screen TVs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "hbs": "^4.0.1",
+    "cookie-parser": "^1.4.3",
+    "request": "^2.81.0"
+  },
+  "engines": {
+    "node": "8.1.4"
+  },
+  "repository": {
+    "url": "https://www.github.com/fileformat/worldclocktv"
+  },
+  "keywords": [
+    "clock",
+    "time",
+    "timezone",
+    "map",
+    "worldclock"
+  ]
+}
