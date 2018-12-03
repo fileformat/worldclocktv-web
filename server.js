@@ -16,9 +16,9 @@ app.locals.gmaps_id = process.env.GMAPS_ID || '';
 
 app.enable('trust proxy');
 app.set('view engine', 'hbs');
-app.set('views', './templates')
+app.set('views', './templates');
 app.use(express.static('public'));
-app.use(cookieParser())
+app.use(cookieParser());
 
 hbs.registerPartial("above", fs.readFileSync("./partials/above.hbs", "utf-8"));
 hbs.registerPartial("below", fs.readFileSync("./partials/below.hbs", "utf-8"));
@@ -27,11 +27,14 @@ hbs.registerHelper('isUrl', function(url, options) { return this.url == url || t
 hbs.registerHelper('isParam', function(param, value, options) { return options.data.root[param] == value ? options.fn(this) : options.inverse(this);});
 
 function getStatus() {
-	var retVal = {}
+	const retVal = {};
 
 	retVal["success"] = true;
 	retVal["message"] = "OK";
 	retVal["timestamp"] = new Date().toISOString();
+    retVal["lastmod"] = process.env.LASTMOD || null;
+    retVal["commit"] = process.env.COMMIT || null;
+    retVal["tech"] = "NodeJS " + process.version;
 	retVal["__dirname"] = __dirname;
 	retVal["__filename"] = __filename;
 	retVal["os.hostname"] = os.hostname();
@@ -52,7 +55,7 @@ function getStatus() {
 	retVal["process.memoryUsage"] = process.memoryUsage();
 	retVal["process.platform"] = process.platform;
 	retVal["process.release"] = process.release;
-  retVal["process.title"] = process.title;
+    retVal["process.title"] = process.title;
 	retVal["process.uptime"] = process.uptime;
 	retVal["process.version"] = process.version;
 	retVal["process.versions"] = process.versions;

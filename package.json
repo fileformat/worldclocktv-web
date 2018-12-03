@@ -1,8 +1,10 @@
 {
-  "name": "world-clock-tv",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Map with time for various locations, formatted for big-screen TVs",
+    "license-actual-since-npm-does-not-follow-the-actual-spdx-spec": "AGPL-3.0-or-later",
+    "license": "AGPL-3.0",
   "main": "server.js",
+    "name": "worldclock-tv",
   "scripts": {
     "start": "node server.js"
   },
