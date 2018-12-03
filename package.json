@@ -1,24 +1,13 @@
 {
-  "version": "1.0.0",
-  "description": "Map with time for various locations, formatted for big-screen TVs",
-    "license-actual-since-npm-does-not-follow-the-actual-spdx-spec": "AGPL-3.0-or-later",
-    "license": "AGPL-3.0",
-  "main": "server.js",
-    "name": "worldclock-tv",
-  "scripts": {
-    "start": "node server.js"
-  },
   "dependencies": {
     "express": "^4.15.4",
     "hbs": "^4.0.1",
     "cookie-parser": "^1.4.3",
     "request": "^2.81.0"
   },
+  "description": "Map with time for various locations, formatted for big-screen TVs",
   "engines": {
     "node": "8.1.4"
-  },
-  "repository": {
-    "url": "https://www.github.com/fileformat/worldclocktv"
   },
   "keywords": [
     "clock",
@@ -26,5 +15,16 @@
     "timezone",
     "map",
     "worldclock"
-  ]
+  ],
+  "license-actual-since-npm-does-not-follow-the-actual-spdx-spec": "AGPL-3.0-or-later",
+  "license": "AGPL-3.0",
+  "main": "server.js",
+  "name": "worldclock-tv",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "url": "https://www.github.com/fileformat/worldclocktv-web"
+  },
+  "version": "1.0.0"
 }
