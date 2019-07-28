@@ -1,4 +1,5 @@
 dist/*
 .env
+*.md
 node_modules/*
 *.sh
