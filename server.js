@@ -32,8 +32,8 @@ function getStatus() {
 	retVal["success"] = true;
 	retVal["message"] = "OK";
 	retVal["timestamp"] = new Date().toISOString();
-    retVal["lastmod"] = process.env.LASTMOD || null;
-    retVal["commit"] = process.env.COMMIT || null;
+    retVal["lastmod"] = process.env.LASTMOD || '(not set)';
+    retVal["commit"] = process.env.COMMIT || '(not set)';
     retVal["tech"] = "NodeJS " + process.version;
 	retVal["__dirname"] = __dirname;
 	retVal["__filename"] = __filename;
