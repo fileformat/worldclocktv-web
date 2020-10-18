@@ -6,6 +6,10 @@ RUN apk update && apk upgrade && apk add --no-cache \
 RUN adduser -D appuser -h /app
 
 WORKDIR /app
+ARG COMMIT="(not set)"
+ARG LASTMOD="(not set)"
+ENV COMMIT=$COMMIT
+ENV LASTMOD=$LASTMOD
 USER appuser
 COPY --chown=appuser:appuser . .
 RUN npm install
