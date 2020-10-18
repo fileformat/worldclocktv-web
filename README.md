@@ -22,21 +22,21 @@ Proprietary: Copyright (c) 2018 by Andrew Marcuse.  All Rights Reserved.
 
 ## Credits
 
-[![Bootstrap](https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg)](http://getbootstrap.com/ "HTML/CSS Framework")
+[![Bootstrap](https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg)](https://getbootstrap.com/ "HTML/CSS Framework")
 [![Cloudflare](https://www.vectorlogo.zone/logos/cloudflare/cloudflare-ar21.svg)](https://www.cloudflare.com/ "CDN")
 [![express.js](https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg)](https://expressjs.com/ "Web Framework")
 [![Git](https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg)](https://git-scm.com/ "Version control")
 [![Github](https://www.vectorlogo.zone/logos/github/github-ar21.svg)](https://github.com/ "Code hosting")
 [![Google Analytics](https://www.vectorlogo.zone/logos/google_analytics/google_analytics-ar21.svg)](https://www.google.com/analytics "Traffic Measurement")
+[![Google Cloud Run](https://www.vectorlogo.zone/logos/google_cloud_run/google_cloud_run-ar21.svg)](https://cloud.google.com/run/ "Hosting")
 [![Google Maps](https://www.vectorlogo.zone/logos/google_maps/google_maps-ar21.svg)](https://www.google.com/maps "Maps")
 [![Handlebars](https://www.vectorlogo.zone/logos/handlebarsjs/handlebarsjs-ar21.svg)](http://handlebarsjs.com/ "Templating")
 [![JavaScript](https://www.vectorlogo.zone/logos/javascript/javascript-ar21.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript "Programming Language")
 [![jQuery](https://www.vectorlogo.zone/logos/jquery/jquery-ar21.svg)](https://jquery.com/ "JavaScript library")
 [![Mozilla](https://www.vectorlogo.zone/logos/mozilla/mozilla-ar21.svg)](https://github.com/mozilla/fxemoji "Icon")
 [![Node.js](https://www.vectorlogo.zone/logos/nodejs/nodejs-ar21.svg)](https://nodejs.org/ "Application Server")
+[![NodePing](https://www.vectorlogo.zone/logos/nodeping/nodeping-ar21.svg)](https://nodeping.com?rid=201109281250J5K3P "Uptime monitoring")
 [![npm](https://www.vectorlogo.zone/logos/npmjs/npmjs-ar21.svg)](https://www.npmjs.com/ "JS Package Management")
-[![Travis CI](https://www.vectorlogo.zone/logos/travis-ci/travis-ci-ar21.svg)](https://travis-ci.org/ "Continuous integration and deployment")
-[![Zeit](https://www.vectorlogo.zone/logos/zeit/zeit-ar21.svg)](https://www.zeit.co/ "Hosting")
 
 
  * [DayNightOverlay](https://github.com/marmat/google-maps-api-addons "Maps overlay to show daytime/nighttime")
