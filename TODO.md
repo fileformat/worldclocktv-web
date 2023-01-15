@@ -1,21 +1,24 @@
 # To Do
 
+ - [ ] bug: on desktop, clicks always go to picker
  - [ ] remote help: picture of remote with actions for each button
+ - [ ] keyboard equivalent to remote: useful for debugging on desktop
  
 ## More pre-defined clocks
 
 Note: there is a [bounds builder](https://www.worldclock.tv/support/bounds.html) to help finding the lat/long boundaries.
 
- - [ ] US with AK/HI
+ - [ ] US with AK/HI (and Indiana)
+ - [ ] Custom (list of major cities with checkboxes)
+ - [ ] financial markets: NY, London, Tokyo, Shanghai, HK,  Toronto, Shenzen, Frankfurt, Bombay, Amsterdam, Stockholm [src](http://www.visualcapitalist.com/20-largest-stock-exchanges-world/)
+ - [ ] Souteast Asia
  - [ ] Canada
  - [ ] Russia
- - [ ] continental Europe
+ - [x] continental Europe
  - [ ] Indonesia
  - [ ] China
- - [ ] Souteast Asia
  - [ ] Africa
- - [ ] global: Paris, Nairobi, Moscow, Delhi, Sydney, NY, LA, Rio, Moscow, Beijing
- - [ ] financial markets: NY, London, Tokyo, Shanghai, HK,  Toronto, Shenzen, Frankfurt, Bombay, Amsterdam, Stockholm [src](http://www.visualcapitalist.com/20-largest-stock-exchanges-world/)
+ - [x] global: Paris, Nairobi, Moscow, Delhi, Sydney, NY, LA, Rio, Moscow, Beijing
  - [ ] EU
  - [ ] UK
  - [ ] Time Zones
@@ -51,10 +54,11 @@ Note: there is a [bounds builder](https://www.worldclock.tv/support/bounds.html)
  - [ ] load default based on geolocation
  - [ ] bounding method: "auto", calc based on locations
 
-## User-defined clocks
+## Build your own clocks
  - [ ] login: [Amazon](https://auth0.com/docs/connections/social/amazon), [Google](https://auth0.com/docs/connections/social/google)
  - [ ] server.js - way to tell if logged in
- - [ ] clock editor
+ - [ ] clock editor - add/remove from list of cities
+ - [ ] clock editor - add location: name, timezone, lat/lng
  - [ ] save clock
  - [ ] add user's clock to clocks.json
 
