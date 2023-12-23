@@ -1,15 +1,12 @@
-FROM mhart/alpine-node:8 as base
-RUN apk update && apk upgrade && apk add --no-cache \
-    bash \
-    git \
-    openssh
-RUN adduser -D appuser -h /app
+FROM node:20-bookworm-slim
+RUN groupadd -r appuser && \
+	useradd --create-home --gid appuser --home-dir /app --no-log-init --system appuser
 
-WORKDIR /app
 ARG COMMIT="(not set)"
 ARG LASTMOD="(not set)"
 ENV COMMIT=$COMMIT
 ENV LASTMOD=$LASTMOD
+WORKDIR /app
 USER appuser
 COPY --chown=appuser:appuser . .
 RUN npm install
