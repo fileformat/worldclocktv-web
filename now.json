@@ -1,8 +1,0 @@
-{
-  "name": "worldclock.tv",
-  "alias": "www.worldclock.tv",
-  "features": {
-    "cloud": "v2"
-  },
-  "type": "docker"
-}

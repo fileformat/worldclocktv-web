@@ -6,9 +6,6 @@
     "request": "^2.81.0"
   },
   "description": "Map with time for various locations, formatted for big-screen TVs",
-  "engines": {
-    "node": "8.1.4"
-  },
   "keywords": [
     "clock",
     "time",
